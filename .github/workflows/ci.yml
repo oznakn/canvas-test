@@ -8,6 +8,8 @@ jobs:
     runs-on: windows-latest
     steps:
       - uses: numworks/setup-msys2@v1
+        with:
+          update: false
 
       - name: Checkout
         uses: actions/checkout@v3
