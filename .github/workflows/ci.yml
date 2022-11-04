@@ -7,11 +7,6 @@ jobs:
   test:
     runs-on: windows-latest
     steps:
-      - uses: numworks/setup-msys2@v1
-        with:
-          update: true
-          path-type: inherit
-
       - name: Use Node
         uses: actions/setup-node@v3
         with:
