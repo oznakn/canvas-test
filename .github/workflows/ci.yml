@@ -9,7 +9,7 @@ jobs:
     steps:
       - name: install deps
         shell: bash
-        run: choco install -y python2 gtk-runtime microsoft-build-tools libjpeg-turbo
+        run: choco install --allow-empty-checksums -y python2 gtk-runtime microsoft-build-tools libjpeg-turbo
 
       - name: install more deps
         shell: bash
