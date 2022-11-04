@@ -9,6 +9,10 @@ jobs:
     steps:
       - name: install deps
         shell: bash
+        run: pacman -v
+
+      - name: install deps
+        shell: bash
         run: choco install --allow-empty-checksums -y python2 gtk-runtime microsoft-build-tools libjpeg-turbo
 
       - name: install more deps
@@ -28,4 +32,4 @@ jobs:
         run: yarn install --frozen-lockfile
 
       - name: rebuild
-        run: yarn run start
+        run: yarn run build
