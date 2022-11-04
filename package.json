@@ -4,7 +4,7 @@
   "main": "index.js",
   "private": true,
   "scripts": {
-    "start": "yarn electron-rebuild -f -w -o canvas"
+    "start": "yarn run electron-rebuild -f -w -o canvas"
   },
   "dependencies": {
     "canvas": "^2.10.2"

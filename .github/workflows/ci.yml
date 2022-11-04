@@ -16,5 +16,8 @@ jobs:
           node-version: "16"
           cache: yarn
 
+      - name: install
+        run: yarn install --frozen-lockfile
+
       - name: rebuild
         run: yarn run start
