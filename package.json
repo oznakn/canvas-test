@@ -5,11 +5,11 @@
   "private": true,
   "scripts": {
     "start": "node index.js",
-    "build": "yarn run electron-rebuild"
+    "build": "yarn run electron-rebuild && yarn run electron-rebuild -f -w -o better-sqlite3 && yarn run electron-rebuild -f -w -o skia-canvas"
   },
   "dependencies": {
     "better-sqlite3": "^7.6.2",
-    "canvas": "^2.10.2"
+    "skia-canvas": "^1.0.1"
   },
   "devDependencies": {
     "@electron/rebuild": "^3.2.9",
