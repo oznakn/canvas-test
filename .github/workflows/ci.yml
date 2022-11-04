@@ -5,8 +5,16 @@ on:
 
 jobs:
   test:
-    runs-on: ubuntu-latest
+    runs-on: windows-latest
     steps:
+      - name: install deps
+        shell: bash
+        run: choco install -y python2 gtk-runtime microsoft-build-tools libjpeg-turbo
+
+      - name: install more deps
+        shell: bash
+        run: bash.exe win-install.sh
+
       - name: Checkout
         uses: actions/checkout@v3
 
