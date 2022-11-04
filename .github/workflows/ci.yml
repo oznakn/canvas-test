@@ -7,6 +7,9 @@ jobs:
   test:
     runs-on: windows-latest
     steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+
       - name: Use Node
         uses: actions/setup-node@v3
         with:
@@ -18,9 +21,6 @@ jobs:
 
       - name: Install deps
         run: msys2do . .github/workflows/win-install.sh
-
-      - name: Checkout
-        uses: actions/checkout@v3
 
       - name: install
         run: yarn install --frozen-lockfile
