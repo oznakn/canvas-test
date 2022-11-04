@@ -7,26 +7,25 @@ jobs:
   test:
     runs-on: windows-latest
     steps:
-      - name: install deps
-        shell: bash
-        run: pacman -v
-
-      - name: install deps
-        shell: bash
-        run: choco install --allow-empty-checksums -y python2 gtk-runtime microsoft-build-tools libjpeg-turbo
-
-      - name: install more deps
-        shell: bash
-        run: bash.exe ./github/workflows/win-install.sh
-
-      - name: Checkout
-        uses: actions/checkout@v3
+      - uses: numworks/setup-msys2@v1
+        with:
+          update: true
+          path-type: inherit
 
       - name: Use Node
         uses: actions/setup-node@v3
         with:
           node-version: "16"
           cache: yarn
+
+      - name: Install node-gyp
+        run: npm install -g node-gyp
+
+      - name: Install deps
+        run: msys2do . .github/workflows/win-install.sh
+
+      - name: Checkout
+        uses: actions/checkout@v3
 
       - name: install
         run: yarn install --frozen-lockfile
